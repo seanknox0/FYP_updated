@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="ie.wit.fyp_updated.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_account"
+        android:name="ie.wit.fyp_updated.ui.account.AccountFragment"
+        android:label="@string/menu_account"
+        tools:layout="@layout/fragment_account" />
+
+    <fragment
+        android:id="@+id/nav_learning"
+        android:name="ie.wit.fyp_updated.ui.learning.LearningFragment"
+        android:label="@string/menu_learning"
+        tools:layout="@layout/fragment_learning" />
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="ie.wit.fyp_updated.ui.logout.LogoutFragment"
+        android:label="@string/menu_learning"
+        tools:layout="@layout/fragment_learning" />
+
+    <activity
+        android:id="@+id/nav_personal"
+        android:name="ie.wit.fyp_updated.ui.personal.PersonalActivity"
+        android:label="@string/menu_personal"
+        tools:layout="@layout/activity_personal" />
+</navigation>
