@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import ie.wit.fyp_updated.databinding.FragmentAccountBinding
 
+
 class AccountFragment : Fragment() {
 
     private lateinit var accountViewModel: AccountViewModel
@@ -29,11 +30,6 @@ class AccountFragment : Fragment() {
 
         _binding = FragmentAccountBinding.inflate(inflater, container, false)
         val root: View = binding.root
-
-        val textView: TextView = binding.textGallery
-        accountViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
         return root
     }
 
