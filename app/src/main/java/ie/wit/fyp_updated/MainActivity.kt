@@ -1,5 +1,6 @@
 package ie.wit.fyp_updated
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import com.google.android.material.snackbar.Snackbar
@@ -11,7 +12,9 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import ie.wit.fyp_updated.databinding.ActivityMainBinding
+import ie.wit.fyp_updated.ui.login.LoginActivity
 
 class MainActivity : AppCompatActivity() {
 

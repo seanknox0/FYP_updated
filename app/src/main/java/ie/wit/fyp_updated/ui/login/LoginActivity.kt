@@ -29,6 +29,7 @@ class LoginActivity : AppCompatActivity() {
     private var email = ""
     private var password = ""
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
