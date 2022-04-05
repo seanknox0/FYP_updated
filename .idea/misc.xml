@@ -4,7 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/drawable/background_layout.xml" value="0.2546875" />
+        <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/drawable/ic_baseline_note_add_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/drawable/side_nav_bar.xml" value="0.2703125" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_account.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_add_diary.xml" value="0.25271739130434784" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_diary.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_login.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />

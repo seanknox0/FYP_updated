@@ -9,12 +9,20 @@
             android:icon="@drawable/ic_baseline_home_24"
             android:title="@string/menu_home" />
         <item
+            android:id="@+id/nav_questionnaire"
+            android:icon="@drawable/ic_baseline_question_answer_24"
+                android:title="@string/menu_questionnaire" />
+        <item
+            android:id="@+id/nav_relief"
+            android:icon="@drawable/ic_baseline_free_breakfast_24"
+            android:title="@string/menu_relief" />
+        <item
             android:id="@+id/nav_personal"
             android:icon="@drawable/ic_baseline_person_24"
             android:title="@string/menu_personal" />
         <item
             android:id="@+id/nav_learning"
-            android:icon="@drawable/ic_baseline_person_24"
+            android:icon="@drawable/ic_baseline_menu_book_24"
             android:title="@string/menu_learning" />
         <item
             android:id="@+id/nav_logout"

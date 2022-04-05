@@ -1,5 +1,6 @@
 package ie.wit.fyp_updated.ui.personal
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.ActionBar
@@ -8,6 +9,7 @@ import ie.wit.fyp_updated.R
 import ie.wit.fyp_updated.databinding.ActivityAccountBinding
 import ie.wit.fyp_updated.databinding.ActivityMainBinding
 import ie.wit.fyp_updated.databinding.ActivityPersonalBinding
+import ie.wit.fyp_updated.ui.login.LoginActivity
 
 class PersonalActivity : AppCompatActivity() {
 
@@ -25,5 +27,11 @@ class PersonalActivity : AppCompatActivity() {
         //Configure ActionBar
         actionBar = supportActionBar!!
         actionBar.title = "Personal"
+
+        binding.diaryBtn.setOnClickListener {
+            startActivity(Intent(this, DiaryActivity::class.java))
+        }
     }
+
+
 }

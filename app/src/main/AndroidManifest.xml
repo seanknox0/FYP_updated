@@ -10,7 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FYP_updated">
         <activity
+            android:name=".ui.personal.AddDiary"
+            android:exported="false" />
+        <activity
             android:name=".ui.personal.PersonalActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.personal.DiaryActivity"
             android:exported="false" />
         <activity
             android:name=".ui.signup.SignUpActivity"
@@ -20,16 +26,16 @@
             android:exported="false" />
         <activity android:name=".ui.login.LoginActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
             android:label="@string/title_activity_drawer"
-            android:theme="@style/Theme.FYP_updated.NoActionBar"
-            android:exported="true">
-        </activity>
+            android:theme="@style/Theme.FYP_updated.NoActionBar"></activity>
     </application>
 
 </manifest>

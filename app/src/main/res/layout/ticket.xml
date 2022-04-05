@@ -14,7 +14,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/ListTitle"
+            android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Title"
@@ -22,7 +22,8 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/ListContent"
+            android:id="@+id/tvDesc"
+            android:paddingLeft="10pt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="cambridge in colour (info and tutorials) cambridge in colour (info and tutorials)cambridge in colour (info and tutorials) cambridge in colour (info and tutorials) cambridge in colour (info and tutorials) cambridge in colour (info and tutorials)" />
@@ -32,16 +33,22 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
             <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="20pt"
+                android:id="@+id/ivEdit"
+                android:layout_marginRight="10pt"
+                android:layout_width="40pt"
                 android:layout_height="20pt"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/ic_baseline_edit_24" />
 
             <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="20pt"
+                android:id="@+id/ivDel"
+                android:layout_width="40pt"
                 android:layout_height="20pt"
                 android:layout_weight="1"
                 app:srcCompat="@drawable/ic_baseline_delete_24" />

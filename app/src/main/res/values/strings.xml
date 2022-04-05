@@ -11,6 +11,8 @@
     <string name="no_account">Not own an account? <b>Sign up here!</b></string>
     <string name="menu_home">Home</string>
     <string name="menu_personal">Personal</string>
+    <string name="menu_questionnaire">Questionnaire</string>
+    <string name="menu_relief">Instant Relief</string>
     <string name="menu_learning">Learning</string>
     <string name="menu_logout">Logout</string>
     <string name="menu_account">Account</string>
