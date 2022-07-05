@@ -1,14 +1,15 @@
 package ie.wit.fyp_updated.ui.personal
 
-class Entry {
+import java.util.*
 
-    var entryID:Int?=null
-    var entryTitle:String?=null
-    var entryDesc:String?=null
+data class Entry(val entryTitle:String?=null,
+                 val entryDesc:String?=null,
+                 val uuid:String?=null)
+{
 
-    constructor(entryID:Int, entryTitle:String, entryDes:String){
-        this.entryID=entryID
+    /*constructor(entryTitle:String, entryDes:String, uuid: String){
         this.entryTitle=entryTitle
         this.entryDesc=entryDes
-    }
+        this.uuid=uuid
+    }*/
 }

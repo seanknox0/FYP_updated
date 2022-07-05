@@ -14,6 +14,7 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.DatabaseReference
 import ie.wit.fyp_updated.R
 import ie.wit.fyp_updated.databinding.ActivityDiaryBinding
 import ie.wit.fyp_updated.databinding.ActivityPersonalBinding
@@ -39,13 +40,21 @@ class DiaryActivity : AppCompatActivity() {
         actionBar.title = "Diary"
 
         //add dummy data
-        listEntries.add(Entry(1, "Feeling quite happy today!", "I get to meet all of my old school friends today and were going out for food"))
-        listEntries.add(Entry(2, "I messed up", "I think I failed my final year exams, they went horribly and now im sad"))
-        listEntries.add(Entry(3, "Im very anxious", "I am worried about a presentation at work later today, I think I need to prepare more"))
+        listEntries.add(Entry("Feeling quite happy today!", "I get to meet all of my old school friends today and were going out for food", ""))
+        listEntries.add(Entry("I messed up", "I think I failed my final year exams, they went horribly and now im sad", ""))
+        listEntries.add(Entry("Im very anxious", "I am worried about a presentation at work later today, I think I need to prepare more", ""))
 
         var myEntriesAdapter = MyEntriesAdapter(this, listEntries)
         binding.lvEntries.adapter=myEntriesAdapter
     }
+
+    /*fun loadDatabase(firebaseData: DatabaseReference) {
+        listEntries.forEach {
+            val key = firebaseData.child("entries").push().key!!
+            it.uuid = key
+            firebaseData.child("entries").child(key).setValue(it)
+        }
+    }*/
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main, menu)
