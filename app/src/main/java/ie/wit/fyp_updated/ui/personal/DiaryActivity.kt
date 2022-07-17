@@ -6,15 +6,13 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.*
-import android.widget.BaseAdapter
-import android.widget.SearchView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.*
 import ie.wit.fyp_updated.R
 import ie.wit.fyp_updated.databinding.ActivityDiaryBinding
 import ie.wit.fyp_updated.databinding.ActivityPersonalBinding
@@ -28,7 +26,12 @@ class DiaryActivity : AppCompatActivity() {
     //ActionBar
     private lateinit var actionBar: ActionBar
 
-    var listEntries=ArrayList<Entry>()
+    private lateinit var entryRecyclerView: RecyclerView
+
+    private lateinit var listEntries: ArrayList<Entry>
+
+    private lateinit var dbRef: DatabaseReference
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,21 +43,40 @@ class DiaryActivity : AppCompatActivity() {
         actionBar.title = "Diary"
 
         //add dummy data
-        listEntries.add(Entry("Feeling quite happy today!", "I get to meet all of my old school friends today and were going out for food", ""))
+        /*listEntries.add(Entry("Feeling quite happy today!", "I get to meet all of my old school friends today and were going out for food", ""))
         listEntries.add(Entry("I messed up", "I think I failed my final year exams, they went horribly and now im sad", ""))
-        listEntries.add(Entry("Im very anxious", "I am worried about a presentation at work later today, I think I need to prepare more", ""))
+        listEntries.add(Entry("Im very anxious", "I am worried about a presentation at work later today, I think I need to prepare more", ""))*/
 
-        var myEntriesAdapter = MyEntriesAdapter(this, listEntries)
-        binding.lvEntries.adapter=myEntriesAdapter
+        entryRecyclerView = findViewById(R.id.rvEntry)
+        entryRecyclerView.layoutManager = LinearLayoutManager(this)
+        entryRecyclerView.setHasFixedSize(true)
+
+        listEntries = arrayListOf<Entry>()
+
+        getEntryData()
     }
 
-    /*fun loadDatabase(firebaseData: DatabaseReference) {
-        listEntries.forEach {
-            val key = firebaseData.child("entries").push().key!!
-            it.uuid = key
-            firebaseData.child("entries").child(key).setValue(it)
-        }
-    }*/
+    private fun getEntryData() {
+        dbRef = FirebaseDatabase.getInstance("https://fyp-login-signup-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Entries")
+
+        dbRef.addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                listEntries.clear()
+                if (snapshot.exists()){
+                    for (entrySnap in snapshot.children){
+                        val entryData = entrySnap.getValue(Entry::class.java)
+                        listEntries.add(entryData!!)
+                    }
+                    var myAdapter = EntryAdapter(listEntries)
+                    binding.rvEntry.adapter = myAdapter
+                }
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
+    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main, menu)
@@ -87,12 +109,13 @@ class DiaryActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    inner class MyEntriesAdapter(context: Context, val entries: ArrayList<Entry>): BaseAdapter() {
 
-        /*
-        var listEntrysAdapter=ArrayList<Entry>()
-        constructor(listEntrysAdapter:ArrayList<Entry>):super(){
-            this.listEntrysAdapter=listEntrysAdapter
+    /*inner class MyEntriesAdapter(context: Context, private val entries: ArrayList<Entry>): BaseAdapter() {
+
+        var listEntries=ArrayList<Entry>()
+
+        constructor(listEntriesAdapter:ArrayList<Entry>): super(){
+            this.listEntries=listEntries
         }
 
         //This is the view holder
@@ -106,7 +129,7 @@ class DiaryActivity : AppCompatActivity() {
             val layoutInflater = LayoutInflater.from(parent.context)
             val itemView = layoutInflater.inflate(R.layout.ticket, parent, false)
             return MyViewHolder(itemView)
-        }*/
+        }
 
         private val layoutInflater = LayoutInflater.from(context)
 
@@ -148,4 +171,5 @@ class DiaryActivity : AppCompatActivity() {
         val entryTitle = view?.findViewById(R.id.tvTitle) as TextView
         val entryDesc = view?.findViewById(R.id.tvDesc) as TextView
     }
+    */
 }
