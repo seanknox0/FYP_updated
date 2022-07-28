@@ -3,68 +3,71 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="20dp">
 
-    <Button
-        android:id="@+id/stressBtn"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:text="Stress"
+    <!--<TextView
+        android:id="@+id/text_emergency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.141" />
+        app:layout_constraintTop_toTopOf="parent" />-->
 
     <Button
-        android:id="@+id/anxBtn"
+        android:id="@+id/hotlineBtn"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:text="Anxiety"
+        android:text="Suicide Hotline"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.308" />
+        app:layout_constraintVertical_bias="0.169" />
 
     <Button
-        android:id="@+id/angBtn"
+        android:id="@+id/therapyBtn"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:text="Anger"
+        android:text="Find a Therapist"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.472" />
+        app:layout_constraintVertical_bias="0.369" />
 
     <Button
-        android:id="@+id/depBtn"
+        android:id="@+id/callBtn"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:text="Depression"
+        android:text="Call Emergency Services"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.637" />
+        app:layout_constraintVertical_bias="0.563" />
 
     <Button
-        android:id="@+id/failBtn"
+        android:id="@+id/mapBtn"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:text="Failure"
+        android:text="Map of Hospitals"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.815" />
+        app:layout_constraintVertical_bias="0.758" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

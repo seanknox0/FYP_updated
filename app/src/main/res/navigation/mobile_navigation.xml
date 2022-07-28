@@ -24,10 +24,10 @@
         tools:layout="@layout/fragment_learning" />
 
     <fragment
-        android:id="@+id/nav_logout"
-        android:name="ie.wit.fyp_updated.ui.logout.LogoutFragment"
-        android:label="@string/menu_learning"
-        tools:layout="@layout/fragment_learning" />
+        android:id="@+id/nav_emergency"
+        android:name="ie.wit.fyp_updated.ui.emergency.EmergencyFragment"
+        android:label="@string/menu_emergency"
+        tools:layout="@layout/fragment_emergency" />
 
     <activity
         android:id="@+id/nav_personal"

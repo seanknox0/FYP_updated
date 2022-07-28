@@ -1,5 +1,6 @@
 package ie.wit.fyp_updated.ui.learning
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import ie.wit.fyp_updated.databinding.FragmentLearningBinding
+import ie.wit.fyp_updated.ui.emergency.MapsActivity
 
 class LearningFragment : Fragment() {
 
@@ -30,10 +32,42 @@ class LearningFragment : Fragment() {
         _binding = FragmentLearningBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textSlideshow
-        learningViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+
+        binding.angBtn.setOnClickListener {
+            activity?.let{
+                val i = Intent (it, AngerActivity::class.java)
+                it.startActivity(i)
+            }
+        }
+
+        binding.anxBtn.setOnClickListener {
+            activity?.let{
+                val i = Intent (it, AnxietyActivity::class.java)
+                it.startActivity(i)
+            }
+        }
+
+        binding.stressBtn.setOnClickListener {
+            activity?.let{
+                val i = Intent (it, StressActivity::class.java)
+                it.startActivity(i)
+            }
+        }
+
+        binding.failBtn.setOnClickListener {
+            activity?.let{
+                val i = Intent (it, FailActivity::class.java)
+                it.startActivity(i)
+            }
+        }
+
+        binding.depBtn.setOnClickListener {
+            activity?.let{
+                val i = Intent (it, DepressionActivity::class.java)
+                it.startActivity(i)
+            }
+        }
+
         return root
     }
 

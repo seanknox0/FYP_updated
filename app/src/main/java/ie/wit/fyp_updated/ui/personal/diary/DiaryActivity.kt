@@ -1,6 +1,5 @@
-package ie.wit.fyp_updated.ui.personal
+package ie.wit.fyp_updated.ui.personal.diary
 
-import android.annotation.SuppressLint
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
@@ -9,14 +8,11 @@ import android.view.*
 import android.widget.*
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.ui.AppBarConfiguration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 import ie.wit.fyp_updated.R
 import ie.wit.fyp_updated.databinding.ActivityDiaryBinding
-import ie.wit.fyp_updated.databinding.ActivityPersonalBinding
-import ie.wit.fyp_updated.databinding.TicketBinding
 
 
 class DiaryActivity : AppCompatActivity() {
@@ -73,7 +69,6 @@ class DiaryActivity : AppCompatActivity() {
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
             }
         })
     }

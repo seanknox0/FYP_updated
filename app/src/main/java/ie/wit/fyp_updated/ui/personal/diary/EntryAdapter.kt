@@ -1,11 +1,9 @@
-package ie.wit.fyp_updated.ui.personal
+package ie.wit.fyp_updated.ui.personal.diary
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ListView
 import android.widget.TextView
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
 import ie.wit.fyp_updated.R
 
