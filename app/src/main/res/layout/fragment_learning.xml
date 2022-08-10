@@ -54,17 +54,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.637" />
 
-    <Button
-        android:id="@+id/failBtn"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:text="Failure"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.815" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

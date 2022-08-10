@@ -17,4 +17,97 @@
     <string name="menu_emergency">Emergency</string>
     <string name="menu_account">Account</string>
     <string name="title_activity_maps">MapsActivity</string>
+
+
+    <!--ANXIOUS-->
+    <string name="anxTitle"><b>What is Anxiety?</b></string>
+    <string name="anxMeaning">Anxiety is a very common and normal emotion that everyone experiences in their life. This emotion is usually in response to stressful situations.</string>
+    <string name="anxAffectsTitle"><b>How Anxiety Affects us</b></string>
+    <string name="anxAffects">•	Muscle tension and headaches.\n
+•	Rapid heart rate, breathing and sweating.\n
+•	Difficulty getting to and staying asleep.\n
+•	Having a strong urge to avoid situations that could trigger your anxiety.\n
+•	Worry or always feeling that something bad is about to happen.\n
+•	Require constant reassurance.
+</string>
+    <string name="anxManageTitle"><b>How to Manage Anxiety</b></string>
+    <string name="anxManage">•	Eating healthy and regular exercise.\n
+•	Relaxation of some sort. Everyone relaxes in different ways. Meditation and Yoga are popular.\n
+•	Self-talk to reassure yourself that this feeling will pass and to talk about yourself in a positive manner.\n
+•   Talking to someone. Bottling up thoughts and emotions can increase your anxiety.
+</string>
+    <string name="anxRef"><i>Reference used and for more information: https://www2.hse.ie/conditions/mental-health/anxiety.html</i></string>
+
+
+    <!--STRESS-->
+    <string name="stressTitle"><b>What is Stress?</b></string>
+    <string name="stressMeaning">Stress is how the body responds to events. Typically activating the nervous system and specific hormones. These hormones speed up heart rate, breathing rate and blood pressure. This reaction prepares our body to perform under pressure.</string>
+
+    <string name="stressAffectsTitle"><b>How Stress Affects us</b></string>
+    <string name="stressAffects">
+•	May have feelings of being emotionally overwhelmed, irritated and low self-esteem.\n
+•	Difficulty concentrating and making decisions.\n
+•	May experience headaches, dizziness, muscle tension and difficulty sleeping.\n
+</string>
+
+    <string name="stressManageTitle"><b>How to Manage Stress</b></string>
+    <string name="stressManage">•	Regular exercise to relieve pent up energy.\n
+•	Spend time with friends and family. Take your mind off things for a while.\n
+•	Avoid alcohol, smoking and caffeine. In the long run this will increase your stress levels.\n
+•   Talking to someone may help you manage your stress better.
+</string>
+    <string name="stressRef"><i>Reference used and for more information: https://www2.hse.ie/wellbeing/mental-health/stress.html</i></string>
+
+
+<!--ANGER-->
+    <string name="angTitle"><b>What is Anger?</b></string>
+    <string name="angMeaning">Anger is a difficult emotion to express and manage. Anger is a very common emotion every person experiences. It is very important that you deal with the anger in an appropriate way.</string>
+
+    <string name="angReasonsTitle"><b>Reasons for Anger</b></string>
+    <string name="angReasons">
+        •	Feeling unappreciated.\n
+        •	Experiencing changes in body (puberty, aging, hair loss).\n
+        •	Being treated unfairly.\n
+        •	Being under a lot of stress or pressure.\n
+        •	Coping with trauma in ones life.
+</string>
+
+    <string name="angManageTitle"><b>How to Manage Anger</b></string>
+    <string name="angManage">
+        •	Counting exercises.\n
+        •	Play and listen to music.\n
+        •	Find somewhere quiet and private to go.\n
+        •	Go for a run, play a sport or exercise in general.\n
+        •	Practice mindfulness.\n
+        •	Never get violent as you can harm yourself and others.\n
+        •   Write down how you are feeling if you get angry occasionally.
+</string>
+    <string name="angRef"><i>Reference used and for more information: https://www2.hse.ie/wellbeing/mental-health/understanding-and-managing-anger.html</i></string>
+
+
+    <!--DEPRESSION-->
+    <string name="depTitle"><b>What is Depression?</b></string>
+    <string name="depMeaning">Depression can develop slowly. Someone who is experiencing depression sometimes does not realise it. The person often feels down and hopeless with not much energy.</string>
+
+    <string name="depSignsTitle"><b>Signs of Depression</b></string>
+    <string name="depSigns">
+        •	Losing interest in doing things you normally enjoy.\n
+        •	Slower speech and movements or more fidgety and restless than usual.\n
+        •	Feel tired or do not have much energy.\n
+        •	Overeating or has lost their appetite.\n
+        •	Sleeping more than usual or not able to sleep.\n
+        •	Trouble concentrating on everyday tasks.
+
+</string>
+
+    <string name="depHelpTitle"><b>How to help someone with Depression</b></string>
+    <string name="depHelp">
+        •	Let them know you care and are there to listen.\n
+        •	Do not judge them and try to be patient.\n
+        •	Help them to stay active, eat good food and get better sleep.\n
+        •	Find psychological therapy services which may be available.\n
+        •	Stay in touch with them - people who are depressed can become isolated and may find it difficult to leave their home.
+</string>
+    <string name="depRef"><i>Reference used and for more information: https://www2.hse.ie/wellbeing/mental-health/information-and-advice-for-families-and-friends/how-to-help-someone-with-depression.html</i></string>
+
 </resources>

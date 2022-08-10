@@ -19,6 +19,7 @@ class EntryAdapter(private val listEntries: ArrayList<Entry>) :
         val currentEntry = listEntries[position]
         holder.tvEntryTitle.text = currentEntry.entryTitle
         holder.tvEntryDesc.text = currentEntry.entryDesc
+        holder.tvEntryDate.text = currentEntry.entryDate
     }
 
     override fun getItemCount(): Int {
@@ -28,5 +29,6 @@ class EntryAdapter(private val listEntries: ArrayList<Entry>) :
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             val tvEntryTitle : TextView = itemView.findViewById(R.id.tvEntryTitle)
             val tvEntryDesc : TextView = itemView.findViewById(R.id.tvEntryDesc)
+            val tvEntryDate : TextView = itemView.findViewById(R.id.tvEntryDate)
     }
 }

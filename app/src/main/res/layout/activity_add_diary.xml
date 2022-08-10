@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="132dp"
         android:ems="10"
-        android:hint="Enter entry title"
+        android:hint="Enter entry Title"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:orientation="horizontal"
@@ -27,12 +27,26 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="63dp"
         android:ems="10"
-        android:hint="Enter entry description"
+        android:hint="Enter entry Description"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="@+id/etTitle"
-        app:layout_constraintTop_toBottomOf="@+id/etTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/etTitle"/>
+
+    <EditText
+        android:id="@+id/etDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="63dp"
+        android:ems="10"
+        android:hint="Enter entry Date"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/etDesc"
+        app:layout_constraintTop_toBottomOf="@+id/etDesc" />
+
 
     <Button
         android:id="@+id/addBtn"
@@ -44,6 +58,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!--        android:onClick="btnAdd"-->
+</androidx.constraintlayout.widget.ConstraintLayout>

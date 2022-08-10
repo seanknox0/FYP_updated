@@ -4,4 +4,5 @@ import java.util.*
 
 data class Entry(val entryTitle:String?=null,
                  val entryDesc:String?=null,
+                 val entryDate:String?=null,
                  val uuid:String?=null)

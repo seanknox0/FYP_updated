@@ -40,10 +40,11 @@ class AddDiary : AppCompatActivity() {
         //get values
         val title = binding.etTitle.text.toString()
         val desc = binding.etDesc.text.toString()
+        val date = binding.etDate.text.toString()
 
         val uuid = dbRef.push().key!!
 
-        val entry = Entry(title, desc)
+        val entry = Entry(title, desc, date)
 
         dbRef.child(uuid).setValue(entry)
             .addOnCompleteListener {
@@ -51,6 +52,7 @@ class AddDiary : AppCompatActivity() {
 
                 binding.etTitle.text.clear()
                 binding.etDesc.text.clear()
+                binding.etDate.text.clear()
 
             }
             .addOnFailureListener { err ->

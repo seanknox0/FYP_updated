@@ -51,9 +51,6 @@
             android:name=".ui.learning.StressActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.learning.FailActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.learning.DepressionActivity"
             android:exported="false" />
         <activity

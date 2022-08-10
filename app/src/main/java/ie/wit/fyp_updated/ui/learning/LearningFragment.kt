@@ -54,12 +54,6 @@ class LearningFragment : Fragment() {
             }
         }
 
-        binding.failBtn.setOnClickListener {
-            activity?.let{
-                val i = Intent (it, FailActivity::class.java)
-                it.startActivity(i)
-            }
-        }
 
         binding.depBtn.setOnClickListener {
             activity?.let{
