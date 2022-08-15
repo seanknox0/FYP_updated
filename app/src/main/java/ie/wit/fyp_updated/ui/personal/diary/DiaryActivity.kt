@@ -10,6 +10,7 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import ie.wit.fyp_updated.R
 import ie.wit.fyp_updated.databinding.ActivityDiaryBinding
@@ -27,6 +28,8 @@ class DiaryActivity : AppCompatActivity() {
     private lateinit var listEntries: ArrayList<Entry>
 
     private lateinit var dbRef: DatabaseReference
+
+    private lateinit var uuid:String
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,7 +56,8 @@ class DiaryActivity : AppCompatActivity() {
     }
 
     private fun getEntryData() {
-        dbRef = FirebaseDatabase.getInstance("https://fyp-login-signup-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Entries")
+        uuid = FirebaseAuth.getInstance().currentUser!!.uid.toString()
+        dbRef = FirebaseDatabase.getInstance("https://fyp-login-signup-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users/${uuid}/Entries")
 
         dbRef.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -67,7 +71,6 @@ class DiaryActivity : AppCompatActivity() {
                     binding.rvEntry.adapter = myAdapter
                 }
             }
-
             override fun onCancelled(error: DatabaseError) {
             }
         })
@@ -103,68 +106,4 @@ class DiaryActivity : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
-
-    /*inner class MyEntriesAdapter(context: Context, private val entries: ArrayList<Entry>): BaseAdapter() {
-
-        var listEntries=ArrayList<Entry>()
-
-        constructor(listEntriesAdapter:ArrayList<Entry>): super(){
-            this.listEntries=listEntries
-        }
-
-        //This is the view holder
-        inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-            internal val ticketTitle = itemView.findViewById<View>(R.id.tvTitle)
-            internal val ticketDesc = itemView.findViewById<View>(R.id.tvDesc)
-        }
-
-        //This is where you return your own ViewHolder with your layout
-        fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-            val layoutInflater = LayoutInflater.from(parent.context)
-            val itemView = layoutInflater.inflate(R.layout.ticket, parent, false)
-            return MyViewHolder(itemView)
-        }
-
-        private val layoutInflater = LayoutInflater.from(context)
-
-        override fun getView(pos: Int, view: View?, viewG: ViewGroup?): View? {
-            val viewHolder: ViewHolder
-            val ticketView: View?
-
-            if (view == null) {
-                ticketView = layoutInflater.inflate(R.layout.ticket, viewG, false)
-                viewHolder = ViewHolder(ticketView)
-                ticketView.tag = viewHolder
-            }
-
-            else {
-                ticketView = view
-                viewHolder = ticketView.tag as ViewHolder
-            }
-
-            viewHolder.entryTitle.text = entries[pos].entryTitle
-            viewHolder.entryDesc.text = entries[pos].entryDesc
-
-            return ticketView
-        }
-
-        override fun getItem(pos: Int): Any {
-            return 0
-        }
-
-        override fun getItemId(pos: Int): Long {
-            return 0
-        }
-
-        override fun getCount(): Int {
-            return entries.size
-        }
-    }
-
-    private class ViewHolder(view: View?){
-        val entryTitle = view?.findViewById(R.id.tvTitle) as TextView
-        val entryDesc = view?.findViewById(R.id.tvDesc) as TextView
-    }
-    */
 }

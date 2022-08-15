@@ -12,6 +12,13 @@
         tools:layout="@layout/fragment_home" />
 
     <activity
+        android:id="@+id/nav_relief"
+        android:name="ie.wit.fyp_updated.ui.relief.InstantReliefActivity"
+        android:label="@string/menu_relief"
+        tools:layout="@layout/activity_instant_relief" />
+
+
+    <activity
         android:id="@+id/nav_account"
         android:name="ie.wit.fyp_updated.ui.account.AccountActivity"
         android:label="@string/menu_account"

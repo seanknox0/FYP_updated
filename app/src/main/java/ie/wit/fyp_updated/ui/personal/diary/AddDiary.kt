@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import ie.wit.fyp_updated.databinding.ActivityAddDiaryBinding
@@ -18,6 +19,8 @@ class AddDiary : AppCompatActivity() {
 
     private lateinit var dbRef: DatabaseReference
 
+    private lateinit var uuid:String
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +31,8 @@ class AddDiary : AppCompatActivity() {
         actionBar = supportActionBar!!
         actionBar.title = "Add Diary"
 
-        dbRef = FirebaseDatabase.getInstance("https://fyp-login-signup-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Entries")
+        uuid = FirebaseAuth.getInstance().currentUser!!.uid.toString()
+        dbRef = FirebaseDatabase.getInstance("https://fyp-login-signup-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users/${uuid}/Entries")
 
         binding.addBtn.setOnClickListener {
             saveData()
@@ -42,11 +46,11 @@ class AddDiary : AppCompatActivity() {
         val desc = binding.etDesc.text.toString()
         val date = binding.etDate.text.toString()
 
-        val uuid = dbRef.push().key!!
+        val entryId = dbRef.push().key!!
 
         val entry = Entry(title, desc, date)
 
-        dbRef.child(uuid).setValue(entry)
+        dbRef.child(entryId).setValue(entry)
             .addOnCompleteListener {
                 Toast.makeText(this, "Entry Saved", Toast.LENGTH_SHORT).show()
 

@@ -5,34 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
-    tools:context=".ui.signup.SignUpActivity">
+    tools:context=".ui.account.UpdateAccountActivity">
 
     <TextView
-        android:id="@+id/titleLabelTv"
+        android:id="@+id/tvTitleUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Sign Up"
+        android:text="Update Account"
         style="@style/TextAppearance.MaterialComponents.Headline4"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Create a New Account"
-        android:layout_below="@id/titleLabelTv"
+        android:text="Change your profile data"
+        android:layout_below="@id/tvTitleUpdate"
         style="@style/TextAppearance.MaterialComponents.Caption"/>
 
-    <!-- User Name -->
+    <!-- Name -->
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/nameTil"
-        android:layout_above="@id/emailTil"
+        android:id="@+id/etUpdateName"
+        android:layout_above="@id/etUpdateAddress"
         android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/nameEt"
+            android:id="@+id/uName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="First Name"
@@ -40,48 +40,48 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!-- Email -->
+    <!-- Address -->
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/emailTil"
-        android:layout_above="@id/passwordTil"
+        android:id="@+id/etUpdateAddress"
+        android:layout_above="@id/etUpdatePhone"
         android:layout_marginBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <EditText
-            android:id="@+id/emailEt"
+            android:id="@+id/uAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
-            android:inputType="textEmailAddress"/>
+            android:hint="Address"
+            android:inputType="textPostalAddress"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
 
-    <!-- Password -->
+    <!-- Phone -->
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/passwordTil"
-        app:passwordToggleEnabled="true"
+        android:id="@+id/etUpdatePhone"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
 
         <EditText
-            android:id="@+id/passwordEt"
+            android:id="@+id/uPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:hint="Password"/>
+            android:inputType="phone"
+            android:hint="Phone Number"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Sign Up button -->
     <Button
-        android:id="@+id/signUpBtn"
+        android:id="@+id/updateAccountBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
-        android:layout_below="@id/passwordTil"
+        android:text="Update"
+        android:layout_below="@id/etUpdatePhone"
         android:layout_marginTop="10dp"/>
 
 </RelativeLayout>

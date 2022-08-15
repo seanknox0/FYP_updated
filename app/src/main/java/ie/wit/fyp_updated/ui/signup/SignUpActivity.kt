@@ -9,8 +9,12 @@ import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import ie.wit.fyp_updated.MainActivity
 import ie.wit.fyp_updated.databinding.ActivitySignUpBinding
+import ie.wit.fyp_updated.ui.account.User
+import ie.wit.fyp_updated.ui.personal.diary.Entry
 
 class SignUpActivity : AppCompatActivity() {
     //ViewBinding
@@ -24,8 +28,17 @@ class SignUpActivity : AppCompatActivity() {
 
     //FirebaseAuth
     private lateinit var firebaseAuth: FirebaseAuth
+
+    //DB Reference
+    private lateinit var dbRef: DatabaseReference
+
+    //User Info
+    private var firstName = ""
     private var email = ""
     private var password = ""
+    private var phoneNum = ""
+    private var address = ""
+    private lateinit var uuid:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +69,7 @@ class SignUpActivity : AppCompatActivity() {
 
     private fun validateData() {
         //get data
+        firstName = binding.nameEt.text.toString().trim()
         email = binding.emailEt.text.toString().trim()
         password = binding.passwordEt.text.toString().trim()
 
@@ -87,12 +101,14 @@ class SignUpActivity : AppCompatActivity() {
                 .addOnSuccessListener {
                     //signup success
                     progressDialog.dismiss()
+
                     //get current user
                     val firebaseUser = firebaseAuth.currentUser
                     val email = firebaseUser!!.email
                     Toast.makeText(this, "Account created with email $email", Toast.LENGTH_SHORT).show()
 
                     //open profile
+                    addtoDatabase()
                     startActivity(Intent(this, MainActivity::class.java))
                     finish()
                 }
@@ -101,6 +117,14 @@ class SignUpActivity : AppCompatActivity() {
                     progressDialog.dismiss()
                     Toast.makeText(this, "SignUp failed due to ${e.message}", Toast.LENGTH_SHORT).show()
                 }
+    }
+
+    private fun addtoDatabase() {
+        uuid = FirebaseAuth.getInstance().currentUser!!.uid.toString()
+        val dbRef = FirebaseDatabase.getInstance("https://fyp-login-signup-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users/${uuid}/Profile")
+
+        val user = User(firstName, email, password, phoneNum, address)
+        dbRef.setValue(user)
     }
 
     override fun onSupportNavigateUp(): Boolean {
