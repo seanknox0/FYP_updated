@@ -30,7 +30,7 @@ class InstantReliefActivity : AppCompatActivity() {
         }
 
         binding.affirmationBtn.setOnClickListener {
-            startActivity(Intent(this, QuoteActivity::class.java))
+            startActivity(Intent(this, AffirmationActivity::class.java))
         }
 
         binding.breathingBtn.setOnClickListener {

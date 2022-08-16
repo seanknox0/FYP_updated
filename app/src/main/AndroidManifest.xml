@@ -71,6 +71,9 @@
         <activity
             android:name=".ui.relief.QuoteActivity"
             android:exported="false" />
+        <activity
+            android:name=".ui.relief.AffirmationActivity"
+            android:exported="false" />
         <activity android:name=".ui.login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
