@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import ie.wit.fyp_updated.R
 import ie.wit.fyp_updated.databinding.ActivityDiaryBinding
+import ie.wit.fyp_updated.databinding.DiaryItemListBinding
 
 
 class DiaryActivity : AppCompatActivity() {
@@ -41,11 +42,6 @@ class DiaryActivity : AppCompatActivity() {
         actionBar = supportActionBar!!
         actionBar.title = "Diary"
 
-        //add dummy data
-        /*listEntries.add(Entry("Feeling quite happy today!", "I get to meet all of my old school friends today and were going out for food", ""))
-        listEntries.add(Entry("I messed up", "I think I failed my final year exams, they went horribly and now im sad", ""))
-        listEntries.add(Entry("Im very anxious", "I am worried about a presentation at work later today, I think I need to prepare more", ""))*/
-
         entryRecyclerView = findViewById(R.id.rvEntry)
         entryRecyclerView.layoutManager = LinearLayoutManager(this)
         entryRecyclerView.setHasFixedSize(true)
@@ -54,6 +50,7 @@ class DiaryActivity : AppCompatActivity() {
 
         getEntryData()
     }
+
 
     private fun getEntryData() {
         uuid = FirebaseAuth.getInstance().currentUser!!.uid.toString()
@@ -69,6 +66,18 @@ class DiaryActivity : AppCompatActivity() {
                     }
                     var myAdapter = EntryAdapter(listEntries)
                     binding.rvEntry.adapter = myAdapter
+
+                    myAdapter.setOnItemClickListener(object : EntryAdapter.OnItemClickListener{
+                        override fun onItemClick(position: Int) {
+                            val intent =  Intent(this@DiaryActivity, DiaryDetails::class.java)
+
+                            intent.putExtra("entryId", listEntries[position].entryId)
+                            intent.putExtra("entryTitle", listEntries[position].entryTitle)
+                            intent.putExtra("entryDesc", listEntries[position].entryDesc)
+                            intent.putExtra("entryDate", listEntries[position].entryDate)
+                            startActivity(intent)
+                        }
+                    })
                 }
             }
             override fun onCancelled(error: DatabaseError) {

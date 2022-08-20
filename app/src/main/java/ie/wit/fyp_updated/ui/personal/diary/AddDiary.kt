@@ -48,7 +48,7 @@ class AddDiary : AppCompatActivity() {
 
         val entryId = dbRef.push().key!!
 
-        val entry = Entry(title, desc, date)
+        val entry = Entry(title, desc, date, entryId)
 
         dbRef.child(entryId).setValue(entry)
             .addOnCompleteListener {

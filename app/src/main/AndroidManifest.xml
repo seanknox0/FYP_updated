@@ -66,6 +66,9 @@
             android:name=".ui.account.UpdateAccountActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.personal.diary.DiaryDetails"
+            android:exported="false" />
+        <activity
             android:name=".ui.relief.InstantReliefActivity"
             android:exported="false" />
         <activity
