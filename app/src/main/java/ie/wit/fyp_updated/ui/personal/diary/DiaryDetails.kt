@@ -1,6 +1,7 @@
 package ie.wit.fyp_updated.ui.personal.diary
 
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.view.Window
 import android.widget.Button
@@ -38,22 +39,64 @@ class DiaryDetails : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityEntryDetailsBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        binding2 = ActivityUpdateDiaryBinding.inflate(layoutInflater)
+        setContentView(binding2.root)
 
         //Configure ActionBar
         actionBar = supportActionBar!!
         actionBar.title = "Diary Details"
 
         //initView()
-        setValuesToViews()
+        //setValuesToViews()
 
-        binding.btnUpdate.setOnClickListener{
+        binding2.etUpTitle.setText(intent.getStringExtra("entryTitle").toString())
+        binding2.etUpDesc.setText(intent.getStringExtra("entryDesc").toString())
+        binding2.etUpDate.setText(intent.getStringExtra("entryDate").toString())
+
+        binding2.btnUpdateData.setOnClickListener{
+            updateEntryData(
+                binding2.etUpTitle.text.toString(),
+                binding2.etUpDesc.text.toString(),
+                binding2.etUpDate.text.toString(),
+                intent.getStringExtra("entryId").toString()
+            )
+        }
+
+        binding2.btnDeleteData.setOnClickListener{
+            deleteEntryData(intent.getStringExtra("entryId").toString())
+        }
+
+        /*binding.btnUpdate.setOnClickListener{
             openUpdateDialog(intent.getStringExtra("entryId").toString(), intent.getStringExtra("entryTitle").toString())
+        }*/
+    }
+
+    private fun deleteEntryData(id: String) {
+        uuid = FirebaseAuth.getInstance().currentUser!!.uid.toString()
+        dbRef = FirebaseDatabase.getInstance("https://fyp-login-signup-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users/${uuid}/Entries").child(id)
+
+        val task = dbRef.removeValue()
+        task.addOnSuccessListener {
+            Toast.makeText(this, "Diary Entry Deleted", Toast.LENGTH_LONG).show()
+
+            val intent = Intent(this, DiaryActivity::class.java)
+            finish()
+            startActivity(intent)
+        }.addOnFailureListener{ error ->
+            Toast.makeText(this, "Deleting Err ${error.message}", Toast.LENGTH_LONG).show()
         }
     }
 
-    private fun openUpdateDialog(entryId: String, entryTitle: String){
+    private fun updateEntryData(title: String, desc: String, date: String, id: String) {
+        uuid = FirebaseAuth.getInstance().currentUser!!.uid.toString()
+        dbRef = FirebaseDatabase.getInstance("https://fyp-login-signup-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users/${uuid}/Entries").child(id)
+
+        val entryInfo = Entry(title, desc, date, id)
+        dbRef.setValue(entryInfo)
+        Toast.makeText(applicationContext, "Diary Entry Updated", Toast.LENGTH_LONG).show()
+    }
+
+    /*private fun openUpdateDialog(entryId: String, entryTitle: String){
         val myDialog = Dialog(this)
         binding2 = ActivityUpdateDiaryBinding.inflate(layoutInflater)
         myDialog.setContentView(binding2.root)
@@ -62,10 +105,10 @@ class DiaryDetails : AppCompatActivity() {
 
         //myDialog.setView(myDialogView)
 
-        /*val etUpTitle = myDialogView.findViewById<EditText>(R.id.etUpTitle)
+        *//*val etUpTitle = myDialogView.findViewById<EditText>(R.id.etUpTitle)
         val etUpDesc = myDialogView.findViewById<EditText>(R.id.etUpDesc)
         val etUpDate = myDialogView.findViewById<EditText>(R.id.etUpDate)
-        val btnUpdateData = myDialogView.findViewById<Button>(R.id.btnUpdateData)*/
+        val btnUpdateData = myDialogView.findViewById<Button>(R.id.btnUpdateData)*//*
 
         binding2.etUpTitle.setText(intent.getStringExtra("entryTitle").toString())
         binding2.etUpDesc.setText(intent.getStringExtra("entryDesc").toString())
@@ -92,15 +135,7 @@ class DiaryDetails : AppCompatActivity() {
         binding.tvEntryDate.text = binding2.etUpDate.text.toString()
 
         myDialog.dismiss()
-    }
-
-    private fun updateEntryData(name: String, desc: String, date: String, id: String) {
-        uuid = FirebaseAuth.getInstance().currentUser!!.uid.toString()
-        dbRef = FirebaseDatabase.getInstance("https://fyp-login-signup-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users/${uuid}/Entries").child(id)
-
-        val entryInfo = Entry(name, desc, date, id)
-        dbRef.setValue(entryInfo)
-    }
+    }*/
 
     /*private fun initView(){
         tvEntryTitle = findViewById(R.id.tvEntryTitle)
@@ -109,11 +144,11 @@ class DiaryDetails : AppCompatActivity() {
 
         btnUpdate = findViewById(R.id.btnUpdate)
         btnDelete = findViewById(R.id.btnDelete)
-    }*/
+    }
 
     private fun setValuesToViews(){
         binding.tvEntryTitle.text = intent.getStringExtra("entryTitle")
         binding.tvEntryDesc.text = intent.getStringExtra("entryDesc")
         binding.tvEntryDate.text = intent.getStringExtra("entryDate")
-    }
+    }*/
 }

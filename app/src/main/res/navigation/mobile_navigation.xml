@@ -12,6 +12,12 @@
         tools:layout="@layout/fragment_home" />
 
     <activity
+        android:id="@+id/nav_questionnaire"
+        android:name="ie.wit.fyp_updated.ui.questionnaire.QuestionActivity"
+        android:label="@string/menu_questionnaire"
+        tools:layout="@layout/activity_questionnaire" />
+
+    <activity
         android:id="@+id/nav_relief"
         android:name="ie.wit.fyp_updated.ui.relief.InstantReliefActivity"
         android:label="@string/menu_relief"

@@ -7,6 +7,8 @@ import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.firebase.ktx.Firebase
+import ie.wit.fyp_updated.MainActivity
 import ie.wit.fyp_updated.databinding.ActivityAccountBinding
 import ie.wit.fyp_updated.ui.login.LoginActivity
 import ie.wit.fyp_updated.ui.personal.diary.DiaryActivity
@@ -57,8 +59,32 @@ class AccountActivity: AppCompatActivity() {
 
         //handle click, delete
         binding.upDeleteBtn.setOnClickListener {
-            //TO-DO
+            deleteData()
         }
+    }
+
+    private fun deleteData() {
+        uuid = FirebaseAuth.getInstance().currentUser!!.uid.toString()
+        dbRef = FirebaseDatabase.getInstance("https://fyp-login-signup-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users/${uuid}/Profile")
+
+        val task = dbRef.removeValue()
+        val user = FirebaseAuth.getInstance().currentUser!!
+
+        task.addOnSuccessListener {
+            Toast.makeText(this, "Profile Data Deleted", Toast.LENGTH_LONG).show()
+        }.addOnFailureListener{ error ->
+            Toast.makeText(this, "Deleting Err ${error.message}", Toast.LENGTH_LONG).show()
+        }
+
+        user.delete().addOnSuccessListener {
+            Toast.makeText(this, "Authentication Data Deleted", Toast.LENGTH_LONG).show()
+            val intent = Intent(this, LoginActivity::class.java)
+            finish()
+            startActivity(intent)
+        }.addOnFailureListener{ error ->
+            Toast.makeText(this, "Deleting Err ${error.message}", Toast.LENGTH_LONG).show()
+        }
+
     }
 
     private fun getUserData() {

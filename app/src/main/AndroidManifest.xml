@@ -72,6 +72,9 @@
             android:name=".ui.relief.InstantReliefActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.questionnaire.QuestionActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.relief.QuoteActivity"
             android:exported="false" />
         <activity
