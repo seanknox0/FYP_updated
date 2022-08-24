@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
 
         //configure actionbar
         actionBar = supportActionBar!!
-        actionBar.title = "Login"
+        actionBar.title = "Login to MHRA"
 
         //configure progress dialog
         progressDialog = ProgressDialog(this)

@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".ui.personal.diary.DiaryDetails">
 
+
+    <!--NOT USED IN THE PROJECT ANYMORE-->
+
     <Button
         android:id="@+id/btnUpdate"
         android:layout_width="wrap_content"
@@ -191,5 +194,7 @@
 
 
     </LinearLayout>
+
+    <!--NOT USED IN THE PROJECT ANYMORE-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

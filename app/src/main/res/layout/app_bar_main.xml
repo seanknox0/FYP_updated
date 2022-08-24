@@ -29,6 +29,7 @@
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/lblue"
         app:srcCompat="@drawable/ic_baseline_notification_important_24" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
