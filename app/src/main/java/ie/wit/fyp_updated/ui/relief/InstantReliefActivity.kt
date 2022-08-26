@@ -34,7 +34,7 @@ class InstantReliefActivity : AppCompatActivity() {
         }
 
         binding.breathingBtn.setOnClickListener {
-            startActivity(Intent(this, QuoteActivity::class.java))
+            startActivity(Intent(this, BreathingActivity::class.java))
         }
     }
 }

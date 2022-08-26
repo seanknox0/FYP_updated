@@ -18,8 +18,24 @@
     <string name="menu_account">Account</string>
     <string name="title_activity_maps">MapsActivity</string>
 
+    <!--BREATHING-->
+    <string name="breatheTitle">Box Breathing Exercise</string>
+    <string name="breatheTips">
+        •	Stand straight or sit upright in a chair with a hand on your stomach.\n
+        •	Ensure your stomach is rising as you are deep breathing, activating full relaxation in your body.\n
+        •	Push stomach out, focus on smooth deep breaths.
+    </string>
+    <string name="breatheInstructionsTitle">Steps</string>
+    <string name="breatheInstructions">
+        <b>Step 1:</b> Press the "In" button and breathe in until timer is done.\n
+        <b>Step 2:</b> Press the "Hold" button and hold your breath until timer is done.\n
+        <b>Step 3:</b> Press the "Out" button and breathe out until timer is done.\n
+        <b>Step 4:</b> Repeat Step 1-3 until you feel re-centered.
+    </string>
+    <string name="breatheRef"><i>Reference used and for more information: https://www.webmd.com/balance/what-is-box-breathing</i></string>
 
-    <!--ANXIOUS-->
+
+    <!--ANXIETY-->
     <string name="anxTitle"><b>What is Anxiety?</b></string>
     <string name="anxMeaning">Anxiety is a very common and normal emotion that everyone experiences in their life. This emotion is usually in response to stressful situations.</string>
     <string name="anxAffectsTitle"><b>How Anxiety Affects us</b></string>

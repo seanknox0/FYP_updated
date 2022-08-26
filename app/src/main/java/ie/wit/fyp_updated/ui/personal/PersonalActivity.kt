@@ -7,6 +7,7 @@ import androidx.appcompat.app.ActionBar
 import androidx.navigation.ui.AppBarConfiguration
 import ie.wit.fyp_updated.databinding.ActivityPersonalBinding
 import ie.wit.fyp_updated.ui.personal.diary.DiaryActivity
+import ie.wit.fyp_updated.ui.personal.mood.MoodActivity
 
 class PersonalActivity : AppCompatActivity() {
 
@@ -27,6 +28,10 @@ class PersonalActivity : AppCompatActivity() {
 
         binding.diaryBtn.setOnClickListener {
             startActivity(Intent(this, DiaryActivity::class.java))
+        }
+
+        binding.moodBtn.setOnClickListener {
+            startActivity(Intent(this,  MoodActivity::class.java))
         }
     }
 

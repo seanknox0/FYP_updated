@@ -9,9 +9,11 @@
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/drawable/side_nav_bar.xml" value="0.2703125" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_account.xml" value="0.4" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_add_diary.xml" value="0.25271739130434784" />
+        <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_add_mood.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_affirmation.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_anger.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_anxiety.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_breathing.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_depression.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_diary.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_entry_details.xml" value="0.36666666666666664" />
@@ -20,6 +22,8 @@
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_login.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_maps.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_mood.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_mood_details.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_personal.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_questionnaire.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/activity_quotes.xml" value="0.36666666666666664" />
@@ -36,11 +40,13 @@
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/fragment_learning.xml" value="0.264" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/fragment_logout.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/fragment_personal.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/mood_item_list.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/nav_header_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/ticket.xml" value="0.264" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/layout/update_dialog.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/menu/activity_main_drawer.xml" value="0.4" />
         <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/menu/main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/seank/AndroidStudioProjects/FYP_updated/app/src/main/res/menu/main_mood.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

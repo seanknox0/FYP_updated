@@ -57,6 +57,15 @@
             android:name=".ui.personal.diary.DiaryActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.personal.mood.MoodActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.personal.mood.AddMood"
+            android:exported="false" />
+        <activity
+            android:name=".ui.personal.mood.MoodDetails"
+            android:exported="false" />
+        <activity
             android:name=".ui.signup.SignUpActivity"
             android:exported="false" />
         <activity
@@ -76,6 +85,9 @@
             android:exported="false" />
         <activity
             android:name=".ui.relief.QuoteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.relief.BreathingActivity"
             android:exported="false" />
         <activity
             android:name=".ui.relief.AffirmationActivity"

@@ -31,7 +31,7 @@
         android:layout_marginTop="20dp"
         android:ems="10"
         android:hint="Entry Date"
-        android:inputType="textPersonName" />
+        android:inputType="date" />
 
     <Button
         android:id="@+id/btnUpdateData"
