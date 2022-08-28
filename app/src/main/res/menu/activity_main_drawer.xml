@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- Adapted from the following reference: https://www.youtube.com/watch?v=5VsRFJjyMjU&list=LL&index=6 -->
+
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
+
+    <!-- Adding items (each section of the app) to the nav drawer -->
 
     <group android:checkableBehavior="single">
         <item
