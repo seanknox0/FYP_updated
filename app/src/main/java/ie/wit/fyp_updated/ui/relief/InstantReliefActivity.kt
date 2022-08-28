@@ -11,6 +11,8 @@ import ie.wit.fyp_updated.ui.personal.diary.DiaryActivity
 class InstantReliefActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
+
+    //view binding
     private lateinit var binding: ActivityInstantReliefBinding
 
     //ActionBar
@@ -25,14 +27,17 @@ class InstantReliefActivity : AppCompatActivity() {
         actionBar = supportActionBar!!
         actionBar.title = "Instant Relief"
 
+        // button to direct user to quotes activity
         binding.quotesBtn.setOnClickListener {
             startActivity(Intent(this, QuoteActivity::class.java))
         }
 
+        // button to direct user to affirmation activity
         binding.affirmationBtn.setOnClickListener {
             startActivity(Intent(this, AffirmationActivity::class.java))
         }
 
+        // button to direct user to breathing exercise activity
         binding.breathingBtn.setOnClickListener {
             startActivity(Intent(this, BreathingActivity::class.java))
         }

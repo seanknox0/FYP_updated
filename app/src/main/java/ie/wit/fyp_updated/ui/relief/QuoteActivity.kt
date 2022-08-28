@@ -6,10 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.ui.AppBarConfiguration
 import ie.wit.fyp_updated.databinding.ActivityQuotesBinding
 
+// Adapted from the following reference: https://youtu.be/F5-pqV3L96E
 
 class QuoteActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
+
+    //view binding
     private lateinit var binding: ActivityQuotesBinding
 
     //ActionBar
@@ -40,9 +43,10 @@ class QuoteActivity : AppCompatActivity() {
         genQuotes()
     }
 
+    // generates affirmations on screen for user
     private fun genQuotes() {
         binding.tvQuote.setOnClickListener{
-            val random: Int = (0 until(quoteList.size)).random()
+            val random: Int = (0 until(quoteList.size)).random()  // gen randomly
             binding.tvQuote.text = quoteList[random]
         }
     }

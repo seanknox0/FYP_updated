@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import ie.wit.fyp_updated.R
 
+//Adapted from the following reference: https://youtu.be/0oOC9cdN2I0
+
 class EntryAdapter(private val listEntries: ArrayList<Entry>) :
     RecyclerView.Adapter<EntryAdapter.ViewHolder>() {
 

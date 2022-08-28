@@ -7,8 +7,9 @@
     <string name="nav_header_subtitle">At Your Service!</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-
     <string name="no_account">Not own an account? <b>Sign up here!</b></string>
+
+    <!-- Menu strings -->
     <string name="menu_home">Home</string>
     <string name="menu_personal">Personal</string>
     <string name="menu_questionnaire">Questionnaire</string>
@@ -34,7 +35,6 @@
     </string>
     <string name="breatheRef"><i>Reference used and for more information: https://www.webmd.com/balance/what-is-box-breathing</i></string>
 
-
     <!--ANXIETY-->
     <string name="anxTitle"><b>What is Anxiety?</b></string>
     <string name="anxMeaning">Anxiety is a very common and normal emotion that everyone experiences in their life. This emotion is usually in response to stressful situations.</string>
@@ -53,7 +53,6 @@
 •   Talking to someone. Bottling up thoughts and emotions can increase your anxiety.
 </string>
     <string name="anxRef"><i>Reference used and for more information: https://www2.hse.ie/conditions/mental-health/anxiety.html</i></string>
-
 
     <!--STRESS-->
     <string name="stressTitle"><b>What is Stress?</b></string>

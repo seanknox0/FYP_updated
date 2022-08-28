@@ -13,6 +13,8 @@ import ie.wit.fyp_updated.databinding.ActivityAccountBinding
 import ie.wit.fyp_updated.ui.login.LoginActivity
 import ie.wit.fyp_updated.ui.personal.diary.DiaryActivity
 
+// Adapted from the following reference: https://www.youtube.com/watch?v=kxdoLfRL6DY
+//                                       https://youtu.be/_DtbxQ9EEhc
 
 class AccountActivity: AppCompatActivity() {
     //ViewBinding
@@ -23,8 +25,14 @@ class AccountActivity: AppCompatActivity() {
 
     //FirebaseAuth
     private lateinit var firebaseAuth: FirebaseAuth
+
+    //Firebase Database
     private lateinit var dbRef: DatabaseReference
+
+    //User data class
     private lateinit var user: User
+
+    // Unique ID
     private lateinit var uuid: String
 
 
@@ -37,10 +45,11 @@ class AccountActivity: AppCompatActivity() {
         actionBar = supportActionBar!!
         actionBar.title = "My Account"
 
-        //init firebase auth
+        //initialize firebase authentication
         firebaseAuth = FirebaseAuth.getInstance()
         checkUser()
 
+        // If a UUID exists obtain its data
         uuid = firebaseAuth.currentUser!!.uid.toString()
         if (uuid.isNotEmpty()){
             getUserData()
@@ -63,31 +72,37 @@ class AccountActivity: AppCompatActivity() {
         }
     }
 
+    // Delete account data from database and authentication list
     private fun deleteData() {
+        // get id from logged in user
         uuid = FirebaseAuth.getInstance().currentUser!!.uid.toString()
+        // reference to the database data
         dbRef = FirebaseDatabase.getInstance("https://fyp-login-signup-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users/${uuid}/Profile")
 
         val task = dbRef.removeValue()
         val user = FirebaseAuth.getInstance().currentUser!!
 
+        // Delete data from database
         task.addOnSuccessListener {
             Toast.makeText(this, "Profile Data Deleted", Toast.LENGTH_LONG).show()
         }.addOnFailureListener{ error ->
             Toast.makeText(this, "Deleting Err ${error.message}", Toast.LENGTH_LONG).show()
         }
 
+        // Delete user from the authentication list
         user.delete().addOnSuccessListener {
             Toast.makeText(this, "Authentication Data Deleted", Toast.LENGTH_LONG).show()
             val intent = Intent(this, LoginActivity::class.java)
             finish()
-            startActivity(intent)
+            startActivity(intent)      // open the login page
         }.addOnFailureListener{ error ->
             Toast.makeText(this, "Deleting Err ${error.message}", Toast.LENGTH_LONG).show()
         }
-
     }
 
+    // Obtain the users data
     private fun getUserData() {
+        // Path to the users data stored in the database
         val dbRef = FirebaseDatabase.getInstance("https://fyp-login-signup-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users/${uuid}/Profile")
         dbRef.addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
@@ -96,7 +111,6 @@ class AccountActivity: AppCompatActivity() {
                 binding.tvAddress.setText(user.address)
                 binding.tvPhoneNum.setText(user.phoneNum)
             }
-
             override fun onCancelled(error: DatabaseError) {
                 Toast.makeText(this@AccountActivity, "SignUp failed due to ${error.message}", Toast.LENGTH_SHORT).show()
             }

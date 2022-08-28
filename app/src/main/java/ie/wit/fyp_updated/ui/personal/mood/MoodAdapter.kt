@@ -9,6 +9,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import ie.wit.fyp_updated.R
 
+// Adapted from the following reference: https://youtu.be/0oOC9cdN2I0
+
 class MoodAdapter(private val listMoods: ArrayList<Mood>) :
     RecyclerView.Adapter<MoodAdapter.ViewHolder>() {
 

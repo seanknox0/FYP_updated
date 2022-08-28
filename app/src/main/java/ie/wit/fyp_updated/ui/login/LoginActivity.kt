@@ -13,6 +13,8 @@ import ie.wit.fyp_updated.MainActivity
 import ie.wit.fyp_updated.databinding.ActivityLoginBinding
 import ie.wit.fyp_updated.ui.signup.SignUpActivity
 
+// Adapted from the following reference: https://www.youtube.com/watch?v=kxdoLfRL6DY
+
 class LoginActivity : AppCompatActivity() {
 
     //ViewBinding
@@ -24,8 +26,10 @@ class LoginActivity : AppCompatActivity() {
     //ProgressDialog
     private lateinit var progressDialog:ProgressDialog
 
-    //FirebaseAuth
+    //Firebase Authentication
     private lateinit var firebaseAuth: FirebaseAuth
+
+    // Login Variables
     private var email = ""
     private var password = ""
 
@@ -45,7 +49,7 @@ class LoginActivity : AppCompatActivity() {
         progressDialog.setMessage("Logging in...")
         progressDialog.setCanceledOnTouchOutside(false)
 
-        //init firebaseAuth
+        //initialize firebase Authentication
         firebaseAuth = FirebaseAuth.getInstance()
         checkUser()
 

@@ -16,6 +16,10 @@ import ie.wit.fyp_updated.databinding.ActivitySignUpBinding
 import ie.wit.fyp_updated.ui.account.User
 import ie.wit.fyp_updated.ui.personal.diary.Entry
 
+// Adapted from the following reference: https://www.youtube.com/watch?v=kxdoLfRL6DY
+//                                       https://youtu.be/2ciHixbc4HE
+//                                       https://youtu.be/y4npeX35B34
+
 class SignUpActivity : AppCompatActivity() {
     //ViewBinding
     private lateinit var binding: ActivitySignUpBinding
@@ -57,7 +61,7 @@ class SignUpActivity : AppCompatActivity() {
         progressDialog.setMessage("Creating account in...")
         progressDialog.setCanceledOnTouchOutside(false)
 
-        //init firebaseAuth
+        //initialize firebase Authentication
         firebaseAuth = FirebaseAuth.getInstance()
 
         //handle click, begin signup
@@ -95,7 +99,6 @@ class SignUpActivity : AppCompatActivity() {
     private fun firebaseSignUp() {
         //show progress
         progressDialog.show()
-
         //create account
         firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnSuccessListener {
@@ -108,7 +111,7 @@ class SignUpActivity : AppCompatActivity() {
                     Toast.makeText(this, "Account created with email $email", Toast.LENGTH_SHORT).show()
 
                     //open profile
-                    addtoDatabase()
+                    addToDatabase()
                     startActivity(Intent(this, MainActivity::class.java))
                     finish()
                 }
@@ -119,11 +122,16 @@ class SignUpActivity : AppCompatActivity() {
                 }
     }
 
-    private fun addtoDatabase() {
+    // Add the entered data to the database
+    private fun addToDatabase() {
+        // get user id
         uuid = FirebaseAuth.getInstance().currentUser!!.uid.toString()
-        val dbRef = FirebaseDatabase.getInstance("https://fyp-login-signup-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users/${uuid}/Profile")
+        // Path to the users data stored in the database
+        dbRef = FirebaseDatabase.getInstance("https://fyp-login-signup-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users/${uuid}/Profile")
 
+        // structure the data in the user data class
         val user = User(firstName, email, password, phoneNum, address)
+        // add the user to database
         dbRef.setValue(user)
     }
 

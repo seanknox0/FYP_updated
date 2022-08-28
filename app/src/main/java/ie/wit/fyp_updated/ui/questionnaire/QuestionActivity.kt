@@ -9,8 +9,8 @@ import ie.wit.fyp_updated.databinding.ActivityQuestionnaireBinding
 
 class QuestionActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
+    // view binding
     private lateinit var binding: ActivityQuestionnaireBinding
-
     //ActionBar
     private lateinit var actionBar: ActionBar
 

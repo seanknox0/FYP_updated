@@ -3,10 +3,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="20dp">
 
+    <!-- Used to direct user to website -->
     <Button
         android:id="@+id/hotlineBtn"
         android:layout_width="200dp"
@@ -19,6 +19,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.169" />
 
+    <!-- Used to direct user to website -->
     <Button
         android:id="@+id/therapyBtn"
         android:layout_width="200dp"
@@ -32,6 +33,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.369" />
 
+    <!-- Used to direct user to dial numpad -->
     <Button
         android:id="@+id/callBtn"
         android:layout_width="200dp"
@@ -44,6 +46,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.563" />
 
+    <!-- Used to direct user to maps activity -->
     <Button
         android:id="@+id/mapBtn"
         android:layout_width="200dp"
@@ -56,6 +59,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.758" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

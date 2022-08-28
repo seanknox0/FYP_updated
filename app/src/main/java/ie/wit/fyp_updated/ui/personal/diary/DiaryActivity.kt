@@ -16,20 +16,23 @@ import ie.wit.fyp_updated.R
 import ie.wit.fyp_updated.databinding.ActivityDiaryBinding
 import ie.wit.fyp_updated.databinding.DiaryItemListBinding
 
+// Adapted from the following references: https://youtu.be/GKxPJbp1WNo
+//                                        https://youtu.be/DW-d0kalMvU
+//                                        https://youtu.be/0oOC9cdN2I0
 
 class DiaryActivity : AppCompatActivity() {
 
+    //ViewBinding
     private lateinit var binding: ActivityDiaryBinding
-
     //ActionBar
     private lateinit var actionBar: ActionBar
-
+    //RecyclerView
     private lateinit var entryRecyclerView: RecyclerView
-
+    //ArrayList for Entries
     private lateinit var listEntries: ArrayList<Entry>
-
+    //Firebase Database
     private lateinit var dbRef: DatabaseReference
-
+    // Unique ID
     private lateinit var uuid:String
 
 
@@ -42,35 +45,43 @@ class DiaryActivity : AppCompatActivity() {
         actionBar = supportActionBar!!
         actionBar.title = "Diary"
 
+        //Find the RecyclerView by its ID
         entryRecyclerView = findViewById(R.id.rvEntry)
         entryRecyclerView.layoutManager = LinearLayoutManager(this)
         entryRecyclerView.setHasFixedSize(true)
 
+        //Initialize ArrayList
         listEntries = arrayListOf<Entry>()
 
+        //obtain data from database
         getEntryData()
     }
 
 
+    //obtain data from database
     private fun getEntryData() {
+        // get id from logged in user
         uuid = FirebaseAuth.getInstance().currentUser!!.uid.toString()
+        // reference to the database data
         dbRef = FirebaseDatabase.getInstance("https://fyp-login-signup-default-rtdb.europe-west1.firebasedatabase.app/").getReference("Users/${uuid}/Entries")
 
         dbRef.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-                listEntries.clear()
+                listEntries.clear()     //clear the arraylist
                 if (snapshot.exists()){
                     for (entrySnap in snapshot.children){
                         val entryData = entrySnap.getValue(Entry::class.java)
-                        listEntries.add(entryData!!)
+                        listEntries.add(entryData!!)     //data from snapshot into the arraylist
                     }
-                    var myAdapter = EntryAdapter(listEntries)
+                    var myAdapter = EntryAdapter(listEntries)     // Send arraylist into the EntryAdapter
                     binding.rvEntry.adapter = myAdapter
 
+                    // When list item is clicked open the details of clicked item
                     myAdapter.setOnItemClickListener(object : EntryAdapter.OnItemClickListener{
                         override fun onItemClick(position: Int) {
                             val intent =  Intent(this@DiaryActivity, DiaryDetails::class.java)
 
+                            // obtaining the data from the arraylist at the position of the item list
                             intent.putExtra("entryId", listEntries[position].entryId)
                             intent.putExtra("entryTitle", listEntries[position].entryTitle)
                             intent.putExtra("entryDesc", listEntries[position].entryDesc)
@@ -85,6 +96,8 @@ class DiaryActivity : AppCompatActivity() {
         })
     }
 
+    // Get the View and appbar items
+    // Search query is not functional - failed to implement from reference
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main, menu)
         val searchView = menu!!.findItem(R.id.app_bar_search).actionView as SearchView
@@ -95,7 +108,6 @@ class DiaryActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, query, Toast.LENGTH_LONG).show()
                 return false
             }
-
             override fun onQueryTextChange(newText: String): Boolean {
                 return false
             }
@@ -103,6 +115,7 @@ class DiaryActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
+    // When the add diary item is clicked, open the AddDiary activity
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item != null) {
             when (item.itemId) {

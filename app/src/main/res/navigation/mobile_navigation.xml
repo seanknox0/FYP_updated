@@ -5,6 +5,8 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/nav_home">
 
+    <!-- Allows the user to navigate between activities & fragments through the nav menu -->
+
     <fragment
         android:id="@+id/nav_home"
         android:name="ie.wit.fyp_updated.ui.home.HomeFragment"

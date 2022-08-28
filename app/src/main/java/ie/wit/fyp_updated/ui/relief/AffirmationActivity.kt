@@ -6,9 +6,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.ui.AppBarConfiguration
 import ie.wit.fyp_updated.databinding.ActivityAffirmationBinding
 
+// Adapted from the following reference: https://youtu.be/F5-pqV3L96E
+
 class AffirmationActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
+
+    // view binding
     private lateinit var binding: ActivityAffirmationBinding
 
     //ActionBar
@@ -39,9 +43,10 @@ class AffirmationActivity : AppCompatActivity() {
         genAffirmations()
     }
 
+    // generates affirmations on screen for user
     private fun genAffirmations() {
         binding.tvAffirmation.setOnClickListener{
-            val random: Int = (0 until(affirmationList.size)).random()
+            val random: Int = (0 until(affirmationList.size)).random() // gen randomly
             binding.tvAffirmation.text = affirmationList[random]
         }
     }

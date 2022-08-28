@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
 
+    <!-- Avatar of the app -->
     <ImageView
         android:id="@+id/ivAvatar"
         android:layout_width="255dp"
@@ -17,6 +18,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.071" />
 
+    <!-- Welcome title to welcome the user -->
     <TextView
         android:id="@+id/tvWelcome"
         android:layout_width="322dp"
@@ -32,6 +34,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.557" />
 
+    <!-- Description to welcome the user -->
     <TextView
         android:id="@+id/tvWelcomeDesc"
         android:layout_width="332dp"

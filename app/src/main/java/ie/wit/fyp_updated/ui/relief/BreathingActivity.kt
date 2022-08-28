@@ -7,9 +7,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.ui.AppBarConfiguration
 import ie.wit.fyp_updated.databinding.ActivityBreathingBinding
 
+// Adapted from the following reference: https://youtu.be/vJoksvY7nBQ
+
 class BreathingActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
+
+    // view binding
     private lateinit var binding: ActivityBreathingBinding
+
+    // Count down timer
     private lateinit var timer: CountDownTimer
 
     //ActionBar
@@ -43,19 +49,22 @@ class BreathingActivity : AppCompatActivity() {
         }
     }
 
+    // start the timer for exercise
     private fun startExercise() {
         timer = object : CountDownTimer(4_000, 1_000) {
             override fun onTick(remaining: Long) {
                 var milli = remaining
                 val secondsInMilli: Long = 1000
-                val elapsedSeconds = milli / secondsInMilli
+                val elapsedSeconds = milli / secondsInMilli   // displays timer in seconds
                 binding.tvCount.text = elapsedSeconds.toString()
             }
 
+            // notice to user timer is done
             override fun onFinish() {
                 binding.tvCount.text = "Done!"
             }
         }
+        // start timer
         timer.start()
     }
 }
